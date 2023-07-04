@@ -9,13 +9,14 @@
 /* Begin PBXBuildFile section */
 		CE5DDD7F2A53814500F768FC /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE5DDD7E2A53814500F768FC /* AppDelegate.swift */; };
 		CE5DDD812A53814500F768FC /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE5DDD802A53814500F768FC /* SceneDelegate.swift */; };
-		CE5DDD832A53814500F768FC /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE5DDD822A53814500F768FC /* ViewController.swift */; };
+		CE5DDD832A53814500F768FC /* InitialConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE5DDD822A53814500F768FC /* InitialConfiguration.swift */; };
 		CE5DDD862A53814500F768FC /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CE5DDD842A53814500F768FC /* Main.storyboard */; };
 		CE5DDD882A53814800F768FC /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CE5DDD872A53814800F768FC /* Assets.xcassets */; };
 		CE5DDD8B2A53814800F768FC /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CE5DDD892A53814800F768FC /* LaunchScreen.storyboard */; };
 		CE5DDD962A53814800F768FC /* WarTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE5DDD952A53814800F768FC /* WarTests.swift */; };
 		CE5DDDA02A53814800F768FC /* WarUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE5DDD9F2A53814800F768FC /* WarUITests.swift */; };
 		CE5DDDA22A53814800F768FC /* WarUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE5DDDA12A53814800F768FC /* WarUITestsLaunchTests.swift */; };
+		CE5DDDAF2A53926D00F768FC /* ManagerController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE5DDDAE2A53926D00F768FC /* ManagerController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -39,7 +40,7 @@
 		CE5DDD7B2A53814500F768FC /* War.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = War.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CE5DDD7E2A53814500F768FC /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		CE5DDD802A53814500F768FC /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		CE5DDD822A53814500F768FC /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		CE5DDD822A53814500F768FC /* InitialConfiguration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InitialConfiguration.swift; sourceTree = "<group>"; };
 		CE5DDD852A53814500F768FC /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		CE5DDD872A53814800F768FC /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		CE5DDD8A2A53814800F768FC /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -49,6 +50,7 @@
 		CE5DDD9B2A53814800F768FC /* WarUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = WarUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		CE5DDD9F2A53814800F768FC /* WarUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WarUITests.swift; sourceTree = "<group>"; };
 		CE5DDDA12A53814800F768FC /* WarUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WarUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		CE5DDDAE2A53926D00F768FC /* ManagerController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ManagerController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -101,7 +103,8 @@
 			children = (
 				CE5DDD7E2A53814500F768FC /* AppDelegate.swift */,
 				CE5DDD802A53814500F768FC /* SceneDelegate.swift */,
-				CE5DDD822A53814500F768FC /* ViewController.swift */,
+				CE5DDD822A53814500F768FC /* InitialConfiguration.swift */,
+				CE5DDDAE2A53926D00F768FC /* ManagerController.swift */,
 				CE5DDD842A53814500F768FC /* Main.storyboard */,
 				CE5DDD872A53814800F768FC /* Assets.xcassets */,
 				CE5DDD892A53814800F768FC /* LaunchScreen.storyboard */,
@@ -258,7 +261,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				CE5DDD832A53814500F768FC /* ViewController.swift in Sources */,
+				CE5DDD832A53814500F768FC /* InitialConfiguration.swift in Sources */,
+				CE5DDDAF2A53926D00F768FC /* ManagerController.swift in Sources */,
 				CE5DDD7F2A53814500F768FC /* AppDelegate.swift in Sources */,
 				CE5DDD812A53814500F768FC /* SceneDelegate.swift in Sources */,
 			);
