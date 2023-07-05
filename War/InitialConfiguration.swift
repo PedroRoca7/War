@@ -20,13 +20,17 @@ class InitialConfiguration: UIViewController {
     @IBAction func selectColor(_ sender: UIButton) {
         let index = buttonsColorsSelected.firstIndex(of: sender)
         performSegue(withIdentifier: "segue", sender: index)
-        func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-             if segue.identifier == "segue" {
-                 let ic = segue.destination as! ManagerController
-                 ic.numbColor = index
+
+    }
+ 
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+         if segue.identifier == "segue" {
+             let ic = segue.destination as! ManagerController
+             if let senderInt = sender as? Int {
+                 ic.numbColor = senderInt
              }
          }
-    }
+     }
     
 }
 
