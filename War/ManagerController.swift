@@ -33,6 +33,7 @@ class ManagerController: UIViewController {
         view.endEditing(true)
     }
     
+    //Converte Int em String
     func convertIntToString(number: Int) -> String {
         if number.isMultiple(of: 2) {
             return String(number)
@@ -42,6 +43,7 @@ class ManagerController: UIViewController {
         }
     }
     
+    //Converte String em Int
     func convertStringToInt(text: String) -> Int {
         let convert = Int(text)
         return convert ?? 0
@@ -51,12 +53,14 @@ class ManagerController: UIViewController {
         if let numberTerritoriesConquered = textFieldAmountTerritoriesConquered.text, let numbTerritories = numberTerritories {
             numberTerritories = numbTerritories + (Int(numberTerritoriesConquered) ?? 0)
             textFieldAmountTerritoriesConquered.text = ""
+            checkSwitchOn()
             updateViewInformation()
             
         }
         
     }
     
+    //Método que cria e exibe um Alert assim que a tela de informações aparece.
     func exibirPopUp() {
         let alertController = UIAlertController(title: "Digite o número de territórios iniciais", message: nil, preferredStyle: .alert)
         
@@ -80,6 +84,7 @@ class ManagerController: UIViewController {
         self.present(alertController, animated: true, completion: nil)
     }
     
+    //Método que verifica se o textField do Alert está vazio e se é maior que zero
     @objc func handleTextFieldTextDidChangeNotification(_ notification: Notification) {
         if let alertController = presentedViewController as? UIAlertController,
            let textField = alertController.textFields?.first,
@@ -92,6 +97,33 @@ class ManagerController: UIViewController {
         }
     }
     
+    func checkSwitchOn() {
+        guard let armys = numberTerritories else { return }
+        var totalTerritories = armys
+        
+        for switchControl in switchConqueredContinents {
+            if switchControl.isOn {
+                switch switchControl {
+                case switchConqueredContinents[0]:
+                    totalTerritories += 7
+                case switchConqueredContinents[1]:
+                    totalTerritories += 7
+                case switchConqueredContinents[2]:
+                    totalTerritories += 3
+                case switchConqueredContinents[3]:
+                    totalTerritories += 4
+                case switchConqueredContinents[4]:
+                    totalTerritories += 3
+                default:
+                    totalTerritories += 10
+                }
+            }
+        }
+        
+        numberTerritories = totalTerritories
+    }
+    
+    //Atualiza as informações das Labels
     func updateViewInformation() {
         DispatchQueue.main.async {
             self.labelTotalTerritoriesConquered.text = self.convertIntToString(number: self.numberTerritories ?? 0)
@@ -99,6 +131,7 @@ class ManagerController: UIViewController {
         }
     }
     
+    //Método que verifica qual cor o jogador escolheu.
     func colorPlayer(number: Int) {
         switch number {
             case 0:

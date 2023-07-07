@@ -354,10 +354,11 @@
                         <outlet property="labelTotalTerritoriesConquered" destination="86c-GH-yXV" id="90M-r5-8UF"/>
                         <outlet property="textFieldAmountTerritoriesConquered" destination="Tcm-j1-9ty" id="Vbm-95-NQY"/>
                         <outletCollection property="switchConqueredContinents" destination="aXT-PM-Rvz" collectionClass="NSMutableArray" id="6cc-Kp-pza"/>
-                        <outletCollection property="switchConqueredContinents" destination="cpR-bN-lGn" collectionClass="NSMutableArray" id="IKq-Fl-Qjn"/>
-                        <outletCollection property="switchConqueredContinents" destination="oMA-rq-f0a" collectionClass="NSMutableArray" id="j3m-BA-vgz"/>
-                        <outletCollection property="switchConqueredContinents" destination="bJH-XZ-6Wt" collectionClass="NSMutableArray" id="pHU-Ul-B0Z"/>
-                        <outletCollection property="switchConqueredContinents" destination="jKe-q3-d6x" collectionClass="NSMutableArray" id="4Xk-dp-9gw"/>
+                        <outletCollection property="switchConqueredContinents" destination="cpR-bN-lGn" collectionClass="NSMutableArray" id="kLb-dc-FKO"/>
+                        <outletCollection property="switchConqueredContinents" destination="oMA-rq-f0a" collectionClass="NSMutableArray" id="ovU-u5-XLI"/>
+                        <outletCollection property="switchConqueredContinents" destination="bJH-XZ-6Wt" collectionClass="NSMutableArray" id="v44-wI-1A4"/>
+                        <outletCollection property="switchConqueredContinents" destination="jKe-q3-d6x" collectionClass="NSMutableArray" id="4SS-p9-s01"/>
+                        <outletCollection property="switchConqueredContinents" destination="zin-e4-Wwd" collectionClass="NSMutableArray" id="r3o-xG-uix"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="iZg-R4-pTv" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
