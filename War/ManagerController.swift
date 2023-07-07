@@ -21,10 +21,16 @@ class ManagerController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         colorPlayer(number: numbColor ?? 0)
+        let tapGesture = UITapGestureRecognizer(target: self, action: #selector(handleTap(_:)))
+        view.addGestureRecognizer(tapGesture)
     }
     
     override func viewDidAppear(_ animated: Bool) {
         exibirPopUp()
+    }
+    
+    @objc func handleTap(_ gesture: UITapGestureRecognizer) {
+        view.endEditing(true)
     }
     
     func convertIntToString(number: Int) -> String {
@@ -42,6 +48,13 @@ class ManagerController: UIViewController {
     }
     
     @IBAction func updateArmiesAvailable(_ sender: Any) {
+        if let numberTerritoriesConquered = textFieldAmountTerritoriesConquered.text, let numbTerritories = numberTerritories {
+            numberTerritories = numbTerritories + (Int(numberTerritoriesConquered) ?? 0)
+            textFieldAmountTerritoriesConquered.text = ""
+            updateViewInformation()
+            
+        }
+        
     }
     
     func exibirPopUp() {
