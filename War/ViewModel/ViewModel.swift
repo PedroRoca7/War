@@ -8,7 +8,11 @@
 import Foundation
 import UIKit
 
-class ViewModel {
+protocol ViewModelProtocol {
+    
+}
+
+class ViewModel: ViewModelProtocol {
     
     private enum colorArmyPlayer: String {
         case white = "bola-branca"
@@ -61,6 +65,7 @@ class ViewModel {
         }
     }
     
+    //Checa se possui algum switch ativo
     public func checkSwitchOn(switchConqueredContinents: [UISwitch]) {
         var totalTerritories = numberTerritories
             

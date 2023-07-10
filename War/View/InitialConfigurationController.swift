@@ -7,7 +7,7 @@
 
 import UIKit
 
-class InitialConfiguration: UIViewController {
+class InitialConfigurationController: UIViewController {
     
     @IBOutlet var buttonsColorsSelected: [UIButton]!
     
