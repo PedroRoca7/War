@@ -15,8 +15,8 @@ class ManagerController: UIViewController {
     @IBOutlet weak var labelArmyAvailable: UILabel!
     @IBOutlet var switchConqueredContinents: [UISwitch]!
     
-    var viewModel: ViewModel?
-    var numbColor: Int?
+    var viewModel: ViewModel = ViewModel()
+    var numbColor: Int = 0
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -35,16 +35,16 @@ class ManagerController: UIViewController {
     
     @IBAction func updateArmiesAvailable(_ sender: Any) {
         if let numberTerritoriesConquered = textFieldAmountTerritoriesConquered.text {
-            viewModel?.setNumberTerritories(value: Int(numberTerritoriesConquered) ?? 0)
+            viewModel.setNumberTerritories(value: Int(numberTerritoriesConquered) ?? 0)
             textFieldAmountTerritoriesConquered.text = ""
-            viewModel?.checkSwitchOn(switchConqueredContinents: switchConqueredContinents)
+            viewModel.checkSwitchOn(switchConqueredContinents: switchConqueredContinents)
             updateViewInformation()
             
         }
     }
     
     private func setImageColorPlayer() {
-        guard let colorPlayer = viewModel?.colorPlayer(number: numbColor ?? 0) else { return }
+        let colorPlayer = viewModel.colorPlayer(number: numbColor)
         imageViewColorPlayer.image = UIImage(named: colorPlayer)
     }
     
@@ -61,7 +61,7 @@ class ManagerController: UIViewController {
         let okAction = UIAlertAction(title: "OK", style: .default) { _ in
             if let textField = alertController.textFields?.first, let texto = textField.text {
                 let valor = Int(texto) ?? 0
-                self.viewModel = ViewModel(numberTerritories: valor)
+                self.viewModel.setNumberTerritories(value: valor)
                 self.setImageColorPlayer()
                 self.updateViewInformation()
             }
@@ -86,10 +86,10 @@ class ManagerController: UIViewController {
     
     //Atualiza as informações das Labels
     private func updateViewInformation() {
-        guard let numberTerritories = self.viewModel?.getNumberTerritories else { return }
+        let numberTerritories = self.viewModel.getNumberTerritories
         self.labelTotalTerritoriesConquered.text = String(numberTerritories)
-        let armyAvailable = self.viewModel?.roundDown(number: numberTerritories/2)
-        self.labelArmyAvailable.text = String(armyAvailable ?? 0)
+        let armyAvailable = self.viewModel.roundDown(number: numberTerritories/2)
+        self.labelArmyAvailable.text = String(armyAvailable)
     }
     
     

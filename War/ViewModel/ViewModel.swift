@@ -23,12 +23,8 @@ class ViewModel: ViewModelProtocol {
         case yellow = "bola-amarela"
     }
     
-    private var numberTerritories: Int
-    
-    init(numberTerritories: Int) {
-        self.numberTerritories = numberTerritories
-    }
-    
+    private var numberTerritories: Int = 0
+
     var getNumberTerritories: Int {
         return numberTerritories
     }
