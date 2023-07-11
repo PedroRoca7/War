@@ -7,7 +7,7 @@
 
 import UIKit
 
-class ManagerController: UIViewController {
+class InfoArmyViewController: UIViewController {
     
     @IBOutlet weak var imageViewColorPlayer: UIImageView!
     @IBOutlet weak var labelTotalTerritoriesConquered: UILabel!
@@ -26,7 +26,12 @@ class ManagerController: UIViewController {
     }
     
     override func viewDidAppear(_ animated: Bool) {
-        exibirPopUp()
+        super.viewDidAppear(animated)
+        AlertManager.showAlert(in: self) { [weak self] valor in
+            self?.viewModel.setNumberTerritories(value: valor)
+            self?.setImageColorPlayer()
+            self?.updateViewInformation()
+        }
     }
     
     @objc func handleTap(_ gesture: UITapGestureRecognizer) {
@@ -47,43 +52,6 @@ class ManagerController: UIViewController {
         let colorPlayer = viewModel.colorPlayer(number: numbColor)
         imageViewColorPlayer.image = UIImage(named: colorPlayer)
     }
-    
-    //Método que cria e exibe um Alert assim que a tela de informações aparece.
-    private func exibirPopUp() {
-        let alertController = UIAlertController(title: "Digite o número de territórios iniciais", message: nil, preferredStyle: .alert)
-        
-        alertController.addTextField { textField in
-            textField.placeholder = "Ex:15"
-            textField.keyboardType = .numberPad
-            NotificationCenter.default.addObserver(self, selector: #selector(self.handleTextFieldTextDidChangeNotification(_:)), name: UITextField.textDidChangeNotification, object: textField)
-        }
-        
-        let okAction = UIAlertAction(title: "OK", style: .default) { _ in
-            if let textField = alertController.textFields?.first, let texto = textField.text {
-                let valor = Int(texto) ?? 0
-                self.viewModel.setNumberTerritories(value: valor)
-                self.setImageColorPlayer()
-                self.updateViewInformation()
-            }
-        }
-        okAction.isEnabled = false
-        alertController.addAction(okAction)
-        self.present(alertController, animated: true, completion: nil)
-    }
-    
-    //Método que verifica se o textField do Alert está vazio e se é maior que zero
-    @objc func handleTextFieldTextDidChangeNotification(_ notification: Notification) {
-        if let alertController = presentedViewController as? UIAlertController,
-           let textField = alertController.textFields?.first,
-           let okAction = alertController.actions.first {
-            if let texto = textField.text, let valor = Int(texto) {
-                okAction.isEnabled = valor > 0
-            } else {
-                okAction.isEnabled = false
-            }
-        }
-    }
-    
     //Atualiza as informações das Labels
     private func updateViewInformation() {
         let numberTerritories = self.viewModel.getNumberTerritories

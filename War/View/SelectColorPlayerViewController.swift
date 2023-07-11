@@ -7,7 +7,7 @@
 
 import UIKit
 
-class InitialConfigurationController: UIViewController {
+class SelectColorPlayerViewController: UIViewController {
     
     @IBOutlet var buttonsColorsSelected: [UIButton]!
     
@@ -23,7 +23,7 @@ class InitialConfigurationController: UIViewController {
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "segue" {
-            if let ic = segue.destination as? ManagerController {
+            if let ic = segue.destination as? InfoArmyViewController {
                 if let senderInt = sender as? Int {
                     ic.numbColor = senderInt
                 }
