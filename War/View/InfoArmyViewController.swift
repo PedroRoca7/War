@@ -28,9 +28,11 @@ class InfoArmyViewController: UIViewController {
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
         AlertManager.showAlert(in: self) { [weak self] valor in
+            self?.view.isHidden = false
             self?.viewModel.setNumberTerritories(value: valor)
             self?.setImageColorPlayer()
             self?.updateViewInformation()
+            
         }
     }
     
